@@ -1,7 +1,24 @@
 <h1><%= @list.name %></h1>
 
-<p><%= link_to "Edit", edit_list_path(@list) %></p>
-<p><%= link_to "Delete", list_path(@list),
+<% if @list.tasks.any? %>
+  <h4>Here are the tasks for this list:</h4>
+  <ul>
+    <% @list.tasks.each do |task| %>
+      <li>
+        <%= task.description %> |
+        <%= link_to "Edit", edit_list_task_path(@list, task) %> |
+        <%= link_to "Delete", list_task_path(@list, task),
+                                  :data => {:confirm => "Are you sure?",
+                                                :method => "delete"} %>
+        </li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>There are no tasks yet!</p>
+<% end %>
+
+<p><%= link_to "Add a task", new_list_task_path(@list) %></p>
+<p><%= link_to "Delete List", list_path(@list),
                           :data => {:confirm => "You sure?",
                                     :method => "delete"} %></p>
 
