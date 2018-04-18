@@ -15,8 +15,11 @@ class ListsController < ApplicationController
   end
 
   def create
+  # list_params needed for list to appear. otherwise it will come up as blank
+  # based on lessons (@list) can be added at the end of lists_path but still needs (list_params to work)
     @list = List.new(list_params)
     if @list.save
+      flash[:notice] = "List successfully added~"
       redirect_to  lists_path
     else
       render :new
