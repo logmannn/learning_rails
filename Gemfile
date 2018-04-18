@@ -10,6 +10,9 @@ end
 gem 'rails', '~> 5.1.6'
 # Use postgresql as the database for Active Record
 gem 'pg', '>= 0.18', '< 2.0'
+gem 'jquery-rails'
+gem 'bootstrap-sass', '~> 3.3.7'
+
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
 # Use SCSS for stylesheets
