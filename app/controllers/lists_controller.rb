@@ -28,13 +28,13 @@ class ListsController < ApplicationController
 
   def edit
     @list = List.find(params[:id])
-      render :edit
+    render :edit
   end
 
   def update
     @list = List.find(params[:id])
     if @list.update(list_params)
-      redirect_to lists_path
+      redirect_to 
     else
       render :edit
     end
