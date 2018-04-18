@@ -1,9 +1,10 @@
-<h1>Lists</h1>
+<h1>Forum</h1>
+<div class="container">
+  <ul>
+    <% @lists.each do |list| %>
+       <li><%= link_to list.name, list_path(list)%></li>
+    <% end %>
+  </ul>
 
-<ul>
-  <% @lists.each do |list| %>
-     <li><%= link_to list.name, list_path(list) %></li>
-  <% end %>
-</ul>
-
-<%= link_to "New List", new_list_path %>
+  <%= link_to "ADD a post", new_list_path %>
+</div>

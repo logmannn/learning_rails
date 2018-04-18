@@ -34,7 +34,7 @@ class ListsController < ApplicationController
   def update
     @list = List.find(params[:id])
     if @list.update(list_params)
-      redirect_to 
+      redirect_to
     else
       render :edit
     end
@@ -43,7 +43,7 @@ class ListsController < ApplicationController
   def destroy
     @list = List.find(params[:id])
     if @list.destroy
-      flash[:notice] = "Destroyed, yo"
+      flash[:notice] = "Item destroyed"
       redirect_to lists_path
     else
       render :new
@@ -52,7 +52,7 @@ class ListsController < ApplicationController
 
   private
   def list_params
-    params.require(:list).permit(:name)
+    params.require(:list).permit(:name, :image)
   end
 
 end
