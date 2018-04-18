@@ -1,24 +1,17 @@
-# README
+# To Do (Practice)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Setup/Installation
+To clone onto your local machine, run the following in the terminal
+```
+ $ git clone https://github.com/kihuynh/to_do_rails
+```
+go into the project folder
+```
+$ rake db:create
+$ rake db:migrate db:test:prepare
+```
+Run the rails server
+`
+$ rails s
+`
