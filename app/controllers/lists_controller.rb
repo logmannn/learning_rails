@@ -28,7 +28,7 @@ class ListsController < ApplicationController
 
   def edit
     @list = List.find(params[:id])
-    render :edit
+      render :edit
   end
 
   def update
@@ -42,8 +42,12 @@ class ListsController < ApplicationController
 
   def destroy
     @list = List.find(params[:id])
-    @list.destroy
-    redirect_to lists_path
+    if @list.destroy
+      flash[:notice] = "Destroyed, yo"
+      redirect_to lists_path
+    else
+      render :new
+    end
   end
 
   private
