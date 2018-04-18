@@ -1,4 +1,9 @@
 class ListsController < ApplicationController
+  def home
+    @lists = List.all
+    render :home
+  end
+
   def index
     @lists = List.all
     render :index
