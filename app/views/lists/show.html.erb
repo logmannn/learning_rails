@@ -1,8 +1,10 @@
 <% content_for(:title, "List | To Do") %>
 
 <h1><%= @list.name %></h1>
-<h3><%= @list.image %></h3>
-<h3><%= @list.description %></h3>
+<img src="<%= @list.image %>" />
+<h3>Description: <%= @list.description %></h3>
+<h3>Github link:<%= @list.githublink %></h3>
+<h3>Live link:<%= @list.livelink %></h3>
 
 <% if @list.tasks.any? %>
   <h4>Here are the tasks for this list:</h4>
