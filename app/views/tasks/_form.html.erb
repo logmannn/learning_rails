@@ -1,7 +1,7 @@
 <%= render('layouts/errors', :object => @task) %>
 
 <%= form_for [@list, @task] do |f| %>
-  <%= f.label :description %>
+  <%= f.label :comments %>
   <%= f.text_field :description %>
   <p><%= f.submit %></p>
 <% end %>
