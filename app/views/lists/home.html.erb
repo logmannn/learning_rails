@@ -1,8 +1,10 @@
 <h1 id="portfolio">Portfolio</h1>
-<!-- <div class="container"> -->
+<div class="container">
+<center>
   <ul>
     <% @lists.each do |list| %>
-       <a href="<%=list_path(list)%>"><img src="<%= list.image %>" /></a>
+       <a href="<%=list_path(list)%>"><img class="img-fluid" src="<%= list.image %>" /></a>
     <% end %>
   </ul>
-<!-- </div> -->
+</center>
+</div>
